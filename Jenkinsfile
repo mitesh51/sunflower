@@ -15,7 +15,7 @@ pipeline {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
         bat 'gradlew.bat build'
-        junit '**/*.apk'
+        archiveArtifacts '**/*.apk'
       }
     }
 
