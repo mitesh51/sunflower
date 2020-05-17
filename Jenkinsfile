@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         tool 'gradle-5.4.1-all'
+        tool 'JDK8'
         bat 'gradlew.bat assembleDebug'
       }
     }
