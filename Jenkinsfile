@@ -14,8 +14,8 @@ pipeline {
       steps {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
-        bat 'gradlew.bat test'
-        junit '**/build/test-reports/*.xml'
+        bat 'gradlew.bat build'
+        junit '**/*.apk'
       }
     }
 
