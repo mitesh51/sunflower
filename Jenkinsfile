@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        tool 'gradle-5.4.1-all'
         bat 'gradlew.bat assembleDebug'
       }
     }
