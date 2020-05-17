@@ -1,11 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('Lint Analysis') {
       steps {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
-        bat 'gradlew.bat assembleDebug'
+        bat 'gradlew.bat lint'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        tool 'gradle-5.4.1-all'
+        tool 'JDK8'
+        bat 'gradlew.bat build'
+        junit '**/build/test-reports/*.xml'
+        archiveArtifacts '**/*.apk'
       }
     }
 
