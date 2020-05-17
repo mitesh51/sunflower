@@ -6,6 +6,7 @@ pipeline {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
         bat 'gradlew.bat lint'
+        androidLint()
       }
     }
 
@@ -13,9 +14,8 @@ pipeline {
       steps {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
-        bat 'gradlew.bat build'
+        bat 'gradlew.bat test'
         junit '**/build/test-reports/*.xml'
-        archiveArtifacts '**/*.apk'
       }
     }
 
