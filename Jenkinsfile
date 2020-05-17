@@ -12,5 +12,6 @@ pipeline {
   }
   environment {
     ANDROID_HOME = 'C:\\Program Files (x86)\\Android\\android-sdk'
+    JAVA_HOME = 'C:\\Program Files\\Java\\jdk1.8.0_111'
   }
 }
