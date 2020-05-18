@@ -1,12 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Lint Analysis') {
+    stage('UnitTests') {
       steps {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
-        bat 'gradlew.bat lint'
-        androidLint()
+        bat 'gradlew.bat jacocoTestReportDebug'
       }
     }
 
