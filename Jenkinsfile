@@ -21,7 +21,7 @@ pipeline {
 
     stage('QARK-SecurityTests') {
       steps {
-        bat 'qark --apk ${workspace}\\app\\build\\outputs\\apk\\release\\app-release-unsigned.apk'
+        bat 'C:\\Users\\Mitesh\\AppData\\Roaming\\Python\\Python38\\site-packages\\qark --apk ${workspace}\\app\\build\\outputs\\apk\\release\\app-release-unsigned.apk'
       }
     }
 
