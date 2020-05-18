@@ -19,6 +19,12 @@ pipeline {
       }
     }
 
+    stage('QARK-SecurityTests') {
+      steps {
+        sh 'qark --apk app\\build\\outputs\\apk\\release\\app-release-unsigned.apk '
+      }
+    }
+
   }
   environment {
     ANDROID_HOME = 'C:\\Program Files (x86)\\Android\\android-sdk'
