@@ -14,14 +14,14 @@ pipeline {
       steps {
         tool 'gradle-5.4.1-all'
         tool 'JDK8'
-        bat 'gradlew.bat build'
+        bat 'gradlew.bat build -x lint'
         archiveArtifacts '**/*.apk'
       }
     }
 
     stage('QARK-SecurityTests') {
       steps {
-        sh 'qark --apk app\\build\\outputs\\apk\\release\\app-release-unsigned.apk '
+        sh 'qark --apk app\\build\\outputs\\apk\\release\\app-release-unsigned.apk'
       }
     }
 
