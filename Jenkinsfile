@@ -21,7 +21,8 @@ pipeline {
 
     stage('QARK-SecurityTests') {
       steps {
-        sh 'qark --apk app\\build\\outputs\\apk\\release\\app-release-unsigned.apk'
+        sh 'qark --apk ${workspace}\\app\\build\\outputs\\apk\\release\\app-release-unsigned.apk'
+        bat 'echo ${workspace}\\app\\build\\outputs\\apk\\release\\app-release-unsigned.apk'
       }
     }
 
